@@ -48,6 +48,8 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
+
+
     }
 
     @Override
@@ -79,6 +81,7 @@ public class MainActivity extends AppCompatActivity
     //add code here
             Intent i = new Intent(MainActivity.this, Login.class);
             startActivity(i);
+
             return true;
         }
 

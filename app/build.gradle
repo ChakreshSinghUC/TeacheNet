@@ -32,3 +32,16 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.facebook.android:facebook-android-sdk:4.37.0'
 }
+
+configurations.all {
+    resolutionStrategy.eachDependency {
+        DependencyResolveDetails details ->
+            def requested = details.requested
+            if(requested.group == 'com.android.support')
+            {
+                if(!requested.name.startsWith("multidex")){
+                    details.useVersion( '25.3.0')
+                }
+            }
+    }
+}
